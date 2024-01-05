@@ -1,24 +1,36 @@
-# README
+# 共通仕様
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Article APIにおけるエンドポイントのドメイン名、リクエストが成功・失敗した際のレスポンス、レート制限などの共通仕様です。
 
-Things you may want to cover:
+# ドメイン名　http://127.0.0.1:3000/api/v1/articles
+エンドポイント
+・記事を取得する
+・記事を作成する
+・記事を更新する
+・記事を削除する
 
-* Ruby version
 
-* System dependencies
+# レート制限　なし
 
-* Configuration
 
-* Database creation
+# ステータスコード
+APIコールの後で、以下のHTTPステータスコードが返されます。ステータスコードの説明は、特に断りがない限り、HTTP status code specification (opens new window)に準拠しています。
 
-* Database initialization
+200 OK	リクエストが成功しました。
+400 Bad Request	リクエストに問題があります。
+401 Unauthorized	有効なチャネルアクセストークンが指定されていません。
+403 Forbidden	リソースにアクセスする権限がありません。ご契約中のプランやアカウントに付与されている権限を確認してください。
+404 Not Found	記事情報を取得できませんでした。次のような理由が考えられます。
+　・対象の記事IDが存在していない
+409 Conflict	同じリトライキーを持つAPIリクエストがすでに受理されています。詳しくは、「失敗したAPIリクエストを再試行する」を参照してください。
+410 Gone	利用できなくなったリソースにアクセスしています。
+413 Payload Too Large	リクエストのサイズが上限を超えています。リクエストのサイズ小さくしてリクエストしなおしてください。
+415 Unsupported Media Type	アップロードしようとしたファイルのメディア形式はサポートされていません。
+500 Internal Server Error	内部サーバーのエラーです。
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+# レスポンスヘッダー
 
-* Deployment instructions
 
-* ...
+# エラーレスポンス
+エラー発生時は、以下のJSONデータを含むレスポンスボディが返されます。
