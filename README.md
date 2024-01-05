@@ -43,9 +43,8 @@ APIコールの後で、以下のHTTPステータスコードが返されます�
 500 Internal Server Error	... 内部サーバーのエラーです。
 
 
-# レスポンスヘッダー
-
-
 # エラーレスポンス
-エラー発生時は、以下のJSONデータを含むレスポンスボディが返されます。
-```json: {status: 'ERROR',  data: article.errors }```
+エラー発生時は、以下のJSONデータを含むレスポンスボディが返されます。<br>
+
+```json: {status: 'ERROR',  data: article.errors }```<br>
+```json: { status: 'ERROR', message: 'Not updated', data: @article.errors }```
