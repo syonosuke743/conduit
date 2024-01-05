@@ -48,3 +48,4 @@ APIコールの後で、以下のHTTPステータスコードが返されます�
 
 # エラーレスポンス
 エラー発生時は、以下のJSONデータを含むレスポンスボディが返されます。
+```json: {status: 'ERROR',  data: article.errors }```
