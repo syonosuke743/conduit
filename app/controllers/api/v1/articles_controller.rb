@@ -30,7 +30,7 @@ module Api
         if @article.update(article_params)
           render json: { status: 'SUCCESS', message: 'Updated the article', data: @article }
         else
-          render json: { status: 'SUCCESS', message: 'Not updated', data: @article.errors }
+          render json: { status: 'ERROR', message: 'Not updated', data: @article.errors }
         end
       end
 
