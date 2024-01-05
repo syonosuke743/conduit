@@ -33,7 +33,7 @@ APIコールの後で、以下のHTTPステータスコードが返されます�
 
 413 Payload Too Large ...	リクエストのサイズが上限を超えています。リクエストのサイズ小さくしてリクエストしなおしてください。<br>
 
-415 Unsupported Media Type	アップロードしようとしたファイルのメディア形式はサポートされていません。<br>
+415 Unsupported Media Type	... アップロードしようとしたファイルのメディア形式はサポートされていません。<br>
 
 500 Internal Server Error	... 内部サーバーのエラーです。
 
